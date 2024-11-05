@@ -1,29 +1,22 @@
 services:
-  medicalserviceback:
+  medical_back:
     build: ./
-    command: python manage.py runserver 0.0.0.0:8000
+    command: poetry run python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./:/usr/src/app
     ports:
       - "8000:8000"
     env_file:
       - ./env.env
-    networks:
-      - medical_network
 
-  medicaldb:
+  medical_db:
     image: postgres:16-alpine
     volumes:
       - medical_postgres_data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres123
-      - POSTGRES_DB=fastMed
-    networks:
-      - medical_network
+    env_file:
+      - ./env.env
+    ports:
+      - 5432:5432
 
 volumes:
   medical_postgres_data:
-
-networks:
-  medical_network:
