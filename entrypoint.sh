@@ -10,7 +10,7 @@ then
   echo "PostgreSQL started"
 fi
 
-cd /usr/src/app/backend  # Переход в директорию с manage.py
+cd /usr/src/app/backend
 
 if [ ! -f "manage.py" ]; then
   echo "manage.py not found in /usr/src/app/backend"
