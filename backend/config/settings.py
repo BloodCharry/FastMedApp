@@ -15,6 +15,7 @@ DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split
 ALLOWED_HOSTS = [host.strip() for host in DJANGO_ALLOWED_HOSTS if host.strip()]
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -171,4 +172,12 @@ SPECTACULAR_SETTINGS = {
         "filter": True,  # включить поиск по тегам
     },
     "COMPONENT_SPLIT_REQUEST": True
+}
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Django & Angular ",
+    "welcome_sign": "Hey there...welcome back",
+    "site_header": "Django & Angular",
+    "site_brand": "Think | Create | Inspire",
+    "copyright": "www.desphixs.com",
 }

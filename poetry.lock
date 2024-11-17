@@ -333,6 +333,20 @@ asgiref = ">=3.6"
 django = ">=4.2"
 
 [[package]]
+name = "django-jazzmin"
+version = "3.0.1"
+description = "Drop-in theme for django admin, that utilises AdminLTE 3 & Bootstrap 4 to make yo' admin look jazzy"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django_jazzmin-3.0.1-py3-none-any.whl", hash = "sha256:12a0a4c1d4fd09c2eef22acf6a1f03112b515ba695c59faa8ea80efc81c1f21b"},
+    {file = "django_jazzmin-3.0.1.tar.gz", hash = "sha256:67ae148bade41267a09ca8e4352ddefa6121795ebbac238bb9a6564ff841eb1b"},
+]
+
+[package.dependencies]
+django = ">=4.2"
+
+[[package]]
 name = "django-templated-mail"
 version = "1.1.1"
 description = "Send emails using Django template system."
@@ -1028,4 +1042,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "be164811eca44d9d2b321d2fb8ab63342358533a2581cfdd078ce158715058c5"
+content-hash = "b6cdde30fbdcb281c34db0cebb1178f5b043c4c83bb906791858d6044a75808e"
