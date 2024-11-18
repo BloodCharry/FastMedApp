@@ -1,5 +1,6 @@
 from django.shortcuts import redirect
 from drf_spectacular.utils import extend_schema_view, extend_schema
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import permissions, generics, status
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -31,6 +32,9 @@ class UserSetPublicViewSet(ModelViewSet):
     update=extend_schema(
         summary="Изменение информации авторизированного пользователя"
     ),
+    destroy=extend_schema(
+        summary="Удаление пользователя"
+    )
 )
 class UserNetViewSet(ModelViewSet):
     serializer_class = GetUserNetSerializer
@@ -38,6 +42,14 @@ class UserNetViewSet(ModelViewSet):
 
     def get_queryset(self):
         return UserNet.objects.filter(id=self.request.user.id)
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        self.perform_destroy(instance)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def perform_destroy(self, instance):
+        instance.delete()
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
@@ -60,6 +72,3 @@ class RegisterView(generics.CreateAPIView):
     #     if response.status_code == status.HTTP_201_CREATED:
     #         return redirect('login')
     #     return response
-
-
-
