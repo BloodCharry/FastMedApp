@@ -34,6 +34,9 @@ class UserSetPublicViewSet(ModelViewSet):
     ),
     destroy=extend_schema(
         summary="Удаление пользователя"
+    ),
+    list=extend_schema(
+        summary="Вывод списка пользователей для авторизированных пользователей"
     )
 )
 class UserNetViewSet(ModelViewSet):
@@ -41,7 +44,7 @@ class UserNetViewSet(ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return UserNet.objects.filter(id=self.request.user.id)
+        return UserNet.objects.all()
 
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
