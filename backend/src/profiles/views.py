@@ -1,4 +1,3 @@
-from django.shortcuts import redirect
 from drf_spectacular.utils import extend_schema_view, extend_schema
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
@@ -55,6 +54,12 @@ class UserNetViewSet(ModelViewSet):
         instance.delete()
 
 
+@extend_schema(tags=["auth"])
+@extend_schema_view(
+    post=extend_schema(
+        summary="Расширенный jwt токен",
+    ),
+)
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
@@ -69,9 +74,3 @@ class RegisterView(generics.CreateAPIView):
     queryset = UserNet.objects.all()
     permission_classes = (permissions.AllowAny,)
     serializer_class = RegisterSerializer
-
-    # def create(self, request, *args, **kwargs):
-    #     response = super().create(request, *args, **kwargs)
-    #     if response.status_code == status.HTTP_201_CREATED:
-    #         return redirect('login')
-    #     return response
