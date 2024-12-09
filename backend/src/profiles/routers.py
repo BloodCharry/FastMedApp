@@ -16,7 +16,7 @@ custom_token_refresh_view = CustomTokenRefreshView()
 
 @extend_schema(tags=["auth"])
 @extend_schema(
-    description="Обновление токена доступа с использованием refresh токена",
+    summary="Обновление токена доступа с использованием refresh токена",
     request=custom_token_refresh_view.get_serializer_class(),
     responses=custom_token_refresh_view.get_serializer_class()
 )
