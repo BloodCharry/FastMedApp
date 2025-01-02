@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --dark-choco: #3A2D28;
+  --mid-choco: #A48374;
+  --light-choco: #CBAD8D;
+  --grey: #D1C7BD;
+  --dark-white: #EBE3DB;
+  --light-white: #F1EDE6;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  color: var(--light-white);
+  width: 100%;
+  padding-right: 0 !important;
+  background: var(--dark-choco);
+  transition: all 0.5s;
+}
