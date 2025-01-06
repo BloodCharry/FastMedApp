@@ -4,11 +4,11 @@ import {HeaderComponent} from "./common-ui/header/header.component";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [ RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
+  standalone: true,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'FastMed';
 }

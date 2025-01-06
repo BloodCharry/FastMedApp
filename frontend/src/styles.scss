@@ -1,19 +1,43 @@
+@use "fonts";
+
 :root {
-  --dark-choco: #3A2D28;
+  --dark-choco: #251b19;
+  --night-choco: #3a2f29;
   --mid-choco: #A48374;
   --light-choco: #CBAD8D;
   --grey: #D1C7BD;
   --dark-white: #EBE3DB;
   --light-white: #F1EDE6;
+  --gracious-pink: rgb(250, 36, 86);
+  --orange: #E68615;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Pop-strong", sans-serif;
   font-size: 16px;
   line-height: 23px;
   color: var(--light-white);
   width: 100%;
   padding-right: 0 !important;
-  background: var(--dark-choco);
+  background: var(--night-choco);
   transition: all 0.5s;
+}
+
+.tags {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--light-white);
+  display: inline;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.btn {
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, var(--gracious-pink), var(--orange));
+  color: var(--dark-choco);
+  padding: 10px 30px;
+  font-weight: 700;
+  line-height: 24px;
 }
