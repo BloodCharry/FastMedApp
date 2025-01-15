@@ -1,6 +1,7 @@
 @use "fonts";
 
 :root {
+  --black: #111111;
   --dark-choco: #251b19;
   --night-choco: #3a2f29;
   --mid-choco: #A48374;
@@ -36,8 +37,43 @@ body {
   border: none;
   border-radius: 50px;
   background: linear-gradient(to right, var(--gracious-pink), var(--orange));
-  color: var(--dark-choco);
   padding: 10px 30px;
   font-weight: 700;
   line-height: 24px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+.mb32 {
+  margin-bottom: 32px;
+}
+
+.mb68 {
+  margin-bottom: 68px;
+}
+
+.ml16 {
+  margin-left: 16px;
+}
+
+.ml32 {
+  margin-left: 32px;
+}
+
+.ml64 {
+  margin-left: 64px;
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+.mt32 {
+  margin-top: 32px;
+}
+
+.mt64 {
+  margin-top: 64px;
 }
